@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMMOLUXE - Agence Immobilière de Prestige</title>
+    <title>IMMOLUXeE.SN - Agence Immobilière de Prestige</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -135,6 +135,13 @@
             text-align: center;
             color: white;
             margin-top: 0;
+            animation: panBackground 20s infinite linear;
+        }
+
+        @keyframes panBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-content {
@@ -833,7 +840,7 @@
     <!-- Hero Section -->
     <section class="hero" id="accueil">
         <div class="container hero-content">
-            <h1>IMMOLUXE - Excellence Immobilière</h1>
+            <h1>IMMOLUXE.SN - Excellence Immobilière</h1>
             <p>Votre partenaire de confiance pour la vente, l'achat et la location de propriétés de prestige. Découvrez notre sélection exclusive de villas, appartements et terrains.</p>
             <a href="#formulaire" class="btn">Prendre Rendez-vous</a>
         </div>
@@ -943,7 +950,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Devenir Partenaire</h2>
-                <p>Collaborer avec IMMOLUXE pour des opportunités d'affaires exceptionnelles</p>
+                    <p>Collaborer avec IMMOLUXE.SN pour des opportunités d'affaires exceptionnelles</p>
             </div>
             
             <div class="partners-grid">
@@ -988,8 +995,8 @@
             <div class="criteria-list">
                 <ul>
                     <li>Pour les locations de maisons et appartements, une avance de 3 mois de loyer est obligatoire</li>
-                    <li>IMMOLUXE accepte les clients étrangers solvables (selon l'avis ou décision du bailleur)</li>
-                    <li>IMMOLUXE accepte également les citoyens du pays</li>
+                    <li>IMMOLUXE.SN accepte les clients étrangers solvables (selon l'avis ou décision du bailleur)</li>
+                    <li>IMMOLUXE.SN accepte également les citoyens du pays</li>
                     <li>Garantie locative exigée pour toutes les locations</li>
                     <li>Dossier complet requis (pièces d'identité, justificatifs de revenus, etc.)</li>
                     <li>Visite des biens sur rendez-vous uniquement</li>
@@ -1195,6 +1202,19 @@
                         <p>Moctar Sylla</p>
                     </div>
                 </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <div>
+                        <h3>Service de Conciergerie</h3>
+                        <p>
+                            <strong>SUNRISE GROUPE Conciergerie:</strong> <a href="https://conciergerie.sunrise-groupe.com" target="_blank" style="color: var(--primary-color); text-decoration: none;">Visiter le site(cliquez-ici)</a><br>
+                            <strong>Site Principal:</strong> <a href="https://sunrise-groupe.com/" target="_blank" style="color: var(--primary-color); text-decoration: none;">Visiter le site(cliquez-ici)</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1223,7 +1243,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 IMMOLUXE. Tous droits réservés.</p>
+                <p>&copy; 2026 IMMOLUXE.SN. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -1447,7 +1467,7 @@
         const galleryPhotos = [
             {
                 url: "images/IMMOLUXE.png",
-                title: "IMMOLUXE"
+                title: "IMMOLUXE.SN"
             },
             {
                 url: "images/Grand Hôtel à vendre sises à Saint Louis.png",
@@ -1501,14 +1521,6 @@
                 url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
                 title: "SOMONE  Villa de rêve à vendre"
             }, 
-            {
-                url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
-                title: "SOMONE  Villa de rêve à vendre"
-            },
-            {
-                url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
-                title: "SOMONE  Villa de rêve à vendre"
-            },
         ];
 
         // Mobile Menu Toggle
@@ -1534,7 +1546,7 @@
         const whatsappBtn = document.getElementById('whatsappBtn');
         whatsappBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const message = encodeURIComponent("Bonjour IMMOLUXE ! Puis-je discuter avec quelqu'un ?");
+            const message = encodeURIComponent("Bonjour IMMOLUXE.SN ! Puis-je discuter avec quelqu'un ?");
             window.open(`https://wa.me/221772185138?text=${message}`, '_blank');
         });
         
@@ -1678,7 +1690,7 @@
             
             const subject = encodeURIComponent(`Demande de partenariat ${type} - ${data.company_name || data.promoteur_name || data.owner_name}`);
             const body = encodeURIComponent(`
-Bonjour IMMOLUXE,
+Bonjour IMMOLUXE.SN,
 
 Je souhaite devenir partenaire ${type} avec les informations suivantes :
 
@@ -1718,7 +1730,7 @@ ${data.contact_person || data.promoteur_name || data.owner_name}
             // Create email content
             const subject = encodeURIComponent(`Nouvelle demande client - ${formData.nom} ${formData.prenom}`);
             const body = encodeURIComponent(`
-Bonjour IMMOLUXE,
+Bonjour IMMOLUXE.SN,
 
 Je vous contacte via votre site web avec les informations suivantes :
 
@@ -1758,4 +1770,79 @@ ${formData.nom} ${formData.prenom}
         
         choosePaymentMethod.addEventListener('click', () => {
             // Validate payment form first
-            const paymentForm = document.getEl
+            const paymentForm = document.getElementById('paymentForm');
+            if (!paymentForm.checkValidity()) {
+                alert("Veuillez remplir tous les champs obligatoires du formulaire de paiement.");
+                paymentForm.reportValidity();
+                return;
+            }
+            
+            paymentModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            paymentModal.style.display = 'none';
+        });
+        
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                selectedPaymentMethod = option.getAttribute('data-method');
+            });
+        });
+        
+        confirmPayment.addEventListener('click', () => {
+            if (!selectedPaymentMethod) {
+                alert("Veuillez sélectionner un mode de paiement.");
+                return;
+            }
+            
+            // Collect payment form data
+            const paymentData = {
+                nom: document.getElementById('pay_nom').value,
+                telephone: document.getElementById('pay_telephone').value,
+                email: document.getElementById('pay_email').value,
+                adresse: document.getElementById('pay_adresse').value,
+                date: document.getElementById('pay_date').value,
+                type: document.getElementById('pay_type').value,
+                montant: document.getElementById('pay_montant').value,
+                details: document.getElementById('pay_details').value,
+                methode: selectedPaymentMethod
+            };
+            
+            // Create WhatsApp message
+            const whatsappMessage = encodeURIComponent(`
+Bonjour IMMOLUXE.SN,
+
+Je souhaite effectuer un paiement avec les détails suivants :
+
+Nom et Prénoms: ${paymentData.nom}
+Téléphone: ${paymentData.telephone}
+Email: ${paymentData.email}
+Adresse/Zone: ${paymentData.adresse}
+Date de la demande: ${paymentData.date}
+Type de transaction: ${paymentData.type}
+Montant: ${paymentData.montant} FCFA
+Méthode de paiement: ${paymentData.methode}
+Détails: ${paymentData.details}
+
+Je vous prie de bien vouloir me fournir les instructions pour finaliser ce paiement.
+
+Cordialement,
+${paymentData.nom}
+            `);
+            
+            // Close modal
+            paymentModal.style.display = 'none';
+            
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/221772185138?text=${whatsappMessage}`, '_blank');
+
+            // Reset form
+            paymentForm.reset();
+        });
+    </script>
+</body>
+</html>
+  
