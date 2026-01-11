@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+.........................................................<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMMOLUXeE.SN - Agence Immobilière de Prestige</title>
+    <title>IMMOLUXE.SN - Agence Immobilière de Prestige</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -238,6 +238,39 @@
         }
 
         .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-card h3 {
             color: var(--primary-color);
             font-size: 1.5rem;
         }
@@ -574,6 +607,30 @@
             transform: scale(1.1);
         }
 
+        .ai-chat-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .ai-chat-float:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
         /* Modal */
         .modal {
             display: none;
@@ -783,15 +840,15 @@
             .hero h1 {
                 font-size: 1.8rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
+
             .btn {
                 padding: 0.7rem 1.5rem;
             }
-            
+
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -799,9 +856,151 @@
                 bottom: 20px;
                 right: 20px;
             }
-            
+
+            .ai-chat-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.7rem;
+                bottom: 20px;
+                left: 20px;
+            }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Additional responsive adjustments for partnership modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 1.5rem;
+                max-width: 95%;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .partner-modal {
+                max-width: 95%;
+            }
+
+            .modal {
+                align-items: flex-start;
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .modal-content {
+                padding: 1rem;
+                max-height: 85vh;
+            }
+
+            .modal {
+                padding: 1rem 0;
+            }
+        }
+
+        /* AI Chat Modal */
+        .ai-chat-modal {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 350px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .ai-chat-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .ai-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .ai-chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .message.user {
+            background-color: var(--secondary-color);
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message.bot {
+            background-color: white;
+            color: var(--dark-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-chat-input {
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .ai-chat-input input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .ai-chat-input button {
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .ai-chat-input button:hover {
+            background-color: #c19b2e;
+        }
+
+        /* Mobile responsive for AI chat */
+        @media (max-width: 576px) {
+            .ai-chat-modal {
+                width: 90vw;
+                height: 70vh;
+                left: 5vw;
+                bottom: 80px;
             }
         }
     </style>
@@ -812,12 +1011,17 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- AI Chat Float Button -->
+    <a href="#" id="aiChatBtn" class="ai-chat-float">
+        <i class="fas fa-robot"></i>
+    </a>
+
     <!-- Header & Navigation -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
                 <i class="fas fa-building"></i>
-                <span>IMMOLUXE</span>
+                <span>IMMOLUXE.SN</span>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -827,11 +1031,13 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#nos-produits">Nos produits</a></li>
                 <li><a href="#galerie">Galerie</a></li>
                 <li><a href="#partenaires">Partenaires</a></li>
                 <li><a href="#criteria">Critères</a></li>
                 <li><a href="#formulaire">Formulaire Client</a></li>
                 <li><a href="#paiement">Paiement</a></li>
+                <li><a href="#about">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -853,8 +1059,8 @@
                 <h2>Nos Services</h2>
                 <p>Découvrez notre gamme complète de services immobiliers</p>
             </div>
-            
-            <div class="services-grid">
+
+<div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
@@ -862,7 +1068,7 @@
                     <h3>Vente de Terrains</h3>
                     <p>Des terrains bien situés pour vos projets de construction.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
@@ -870,7 +1076,7 @@
                     <h3>Location d'Appartements</h3>
                     <p>Appartements modernes et bien équipés dans les meilleurs quartiers.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-chess-queen"></i>
@@ -878,7 +1084,7 @@
                     <h3>Vente de Villas</h3>
                     <p>Villas de prestige avec des équipements haut de gamme.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-handshake"></i>
@@ -886,7 +1092,7 @@
                     <h3>Négociations</h3>
                     <p>Nous négocions les meilleurs prix pour nos clients.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-comments"></i>
@@ -894,7 +1100,7 @@
                     <h3>Conseils Clients</h3>
                     <p>Des conseils experts pour faire les bons choix immobiliers.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-drafting-compass"></i>
@@ -902,7 +1108,7 @@
                     <h3>Conception Architecturale</h3>
                     <p>Création de plans sur mesure pour vos projets de construction.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-clipboard-check"></i>
@@ -910,13 +1116,83 @@
                     <h3>Suivi des Réalisations</h3>
                     <p>Accompagnement de vos projets du début à la fin.</p>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-search-dollar"></i>
                     </div>
                     <h3>Consultation</h3>
                     <p>Étude de marché et analyse de rentabilité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Produits Section -->
+    <section class="section" id="nos-produits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Produits</h2>
+                <p>Découvrez notre sélection exclusive de propriétés immobilières</p>
+            </div>
+
+            <div class="services-grid" id="productsGrid">
+                <!-- Les produits seront ajoutés dynamiquement via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À propos d'IMMOLUXE.SN</h2>
+                <p>Découvrez notre vision, mission et objectifs stratégiques</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Notre Vision</h3>
+                    <p>La vision d'IMMOLUXE.SN est de devenir la référence absolue et l'acteur le plus respecté dans le domaine de l'immobilier de prestige et de conseil expert à Dakar et au Sénégal. Nous aspirons à redéfinir l'expérience immobilière en élevant les standards du marché, en devenant le partenaire incontournable pour une clientèle exigeante qui recherche non seulement un bien, mais une valeur sûre, un investissement judicieux et une expérience d'acquisition exceptionnelle. Notre ambition est d'incarner l'excellence, la confiance et la parfaite maîtrise du marché local et des aspirations de notre clientèle.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Notre Mission</h3>
+                    <p>La mission quotidienne d'IMMOLUXE.SN est d'accompagner ses clients avec un niveau de professionnalisme, de discrétion et de rigueur inégalé dans la réalisation de leurs projets immobiliers. Pour nos clients, nous nous engageons à fournir un conseil stratégique, personnalisé et éclairé, en nous appuyant sur une analyse approfondie et une connaissance intime du marché dakarois. Nous nous donnons pour devoir de sécuriser chaque transaction, qu'il s'agisse d'achat, de vente, de location ou d'investissement, en garantissant la meilleure valeur, une parfaite transparence et une sérénité totale. Notre rôle est de valoriser un portefeuille sélectif de biens d'exception et de bâtir des relations durables fondées sur la satisfaction et la réussite de nos clients.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Objectifs Stratégiques</h3>
+<p>Nos objectifs stratégiques pour les prochaines années sont concrets et orientés vers une croissance qualitative. Tout d'abord, nous visons à consolider notre positionnement comme l'agence leader de l'immobilier haut de gamme à Dakar, en développant une notoriété forte auprès d'une clientèle locale et internationale exigeante. Sur le plan commercial, nous travaillerons à constituer et gérer un portefeuille exclusif d'au moins 50 propriétés premium, tout en maintenant une croissance annuelle de notre chiffre d'affaires grâce à un taux de fidélisation client élevé et à des recommandations.
+
+Opérationnellement, nous nous engageons à mettre en place et à perfectionner un processus de transaction "IMMOLUXE" standardisé, qui assurera une sécurité juridique irréprochable, une transparence financière absolue et un suivi méticuleux pour chaque dossier. Enfin, pour affirmer notre expertise, nous publierons régulièrement des analyses pointues du marché, positionnant IMMOLUXE.SN non seulement comme un intermédiaire, mais comme un véritable think-tank et une source fiable d'information sur l'immobilier de prestige au Sénégal.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Équipe de Direction</h3>
+                    <ul>
+                        <li>1- PDG : Moctar Sylla</li>
+                        <li>2- Architecte Senior: Mamadou Seck</li>
+                        <li>3- Développeur web et analyste des données : DEGUENON Luc</li>
+                        <li>4- DRH : Chargé de recrutement, Responsable de la mobilité internationale, Consultant en recrutement, Responsable des relations sociales. Dieynaba DOUMBOUYA</li>
+                        <li>5- Responsable commercial MARIAMA DOUMBOUYA</li>
+                        <li>6- QHSE (qualité hygiène sécurité et environnement) RACKY SALL</li>
+                        <li>7- Responsable finance BINETA SYLLA</li>
+                        <li>8- AVOCAT MAÎTRE MBODJ</li>
+                        <li>9- VIDÉASTES (image, vidéo) MALICK SALL</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1225,7 +1501,7 @@
             <div class="footer-content">
                 <div class="logo">
                     <i class="fas fa-building"></i>
-                    <span>IMMOLUXE</span>
+                    <span>IMMOLUXE.SN</span>
                 </div>
                 
                 <div>
@@ -1298,36 +1574,36 @@
         <div class="modal-content partner-modal">
             <button class="close-modal" id="closePartnerModal">&times;</button>
             <h3 id="partnerModalTitle">Devenir Partenaire Commercial</h3>
-            
+
             <div id="partnerFormCommercial" class="partner-form">
                 <form id="commercialPartnerForm">
                     <div class="form-group">
                         <label for="company_name" class="required">Nom de l'entreprise</label>
                         <input type="text" id="company_name" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contact_person" class="required">Personne de contact</label>
                             <input type="text" id="contact_person" class="form-control" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="company_phone" class="required">Téléphone</label>
                             <input type="tel" id="company_phone" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="company_email" class="required">Email</label>
                         <input type="email" id="company_email" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="company_website">Site web</label>
                         <input type="url" id="company_website" class="form-control">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="company_experience" class="required">Expérience dans l'immobilier</label>
                         <select id="company_experience" class="form-control" required>
@@ -1338,37 +1614,37 @@
                             <option value="plus_5">Plus de 5 ans</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="company_message">Message</label>
                         <textarea id="company_message" class="form-control" rows="4" placeholder="Présentez votre entreprise et vos motivations..."></textarea>
                     </div>
-                    
+
                     <div class="form-group">
                         <button type="submit" class="btn" style="width: 100%;">Envoyer la Demande de Partenariat</button>
                     </div>
                 </form>
             </div>
-            
+
             <div id="partnerFormPromoteur" class="partner-form">
                 <form id="promoteurPartnerForm">
                     <div class="form-group">
                         <label for="promoteur_name" class="required">Nom du promoteur</label>
                         <input type="text" id="promoteur_name" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="promoteur_phone" class="required">Téléphone</label>
                             <input type="tel" id="promoteur_phone" class="form-control" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="promoteur_email" class="required">Email</label>
                             <input type="email" id="promoteur_email" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="project_type" class="required">Type de projet</label>
                         <select id="project_type" class="form-control" required>
@@ -1380,47 +1656,47 @@
                             <option value="mixte">Mixte</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="project_location" class="required">Localisation du projet</label>
                         <input type="text" id="project_location" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="investment_amount" class="required">Montant d'investissement prévu (FCFA)</label>
                         <input type="number" id="investment_amount" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="promoteur_message">Message</label>
                         <textarea id="promoteur_message" class="form-control" rows="4" placeholder="Décrivez votre projet..."></textarea>
                     </div>
-                    
+
                     <div class="form-group">
                         <button type="submit" class="btn" style="width: 100%;">Envoyer la Demande de Partenariat</button>
                     </div>
                 </form>
             </div>
-            
+
             <div id="partnerFormProprietaire" class="partner-form">
                 <form id="proprietairePartnerForm">
                     <div class="form-group">
                         <label for="owner_name" class="required">Nom du propriétaire</label>
                         <input type="text" id="owner_name" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="owner_phone" class="required">Téléphone</label>
                             <input type="tel" id="owner_phone" class="form-control" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="owner_email" class="required">Email</label>
                             <input type="email" id="owner_email" class="form-control" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="property_type" class="required">Type de bien</label>
                         <select id="property_type" class="form-control" required>
@@ -1433,12 +1709,12 @@
                             <option value="commercial">Local commercial</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="property_location" class="required">Localisation du bien</label>
                         <input type="text" id="property_location" class="form-control" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="property_status" class="required">État du bien</label>
                         <select id="property_status" class="form-control" required>
@@ -1448,17 +1724,34 @@
                             <option value="renovation">À rénover</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="owner_message">Message</label>
                         <textarea id="owner_message" class="form-control" rows="4" placeholder="Informations supplémentaires sur le bien..."></textarea>
                     </div>
-                    
+
                     <div class="form-group">
                         <button type="submit" class="btn" style="width: 100%;">Envoyer la Demande de Partenariat</button>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <!-- AI Chat Modal -->
+    <div class="ai-chat-modal" id="aiChatModal">
+        <div class="ai-chat-header">
+            <h3>Assistant IMMOLUXE</h3>
+            <button class="ai-chat-close" id="closeAiChat">&times;</button>
+        </div>
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="message bot">
+                Bonjour ! Je suis l'assistant virtuel d'IMMOLUXE.SN. Comment puis-je vous aider aujourd'hui ? Posez-moi une question sur nos services, propriétés ou critères.
+            </div>
+        </div>
+        <div class="ai-chat-input">
+            <input type="text" id="aiChatInput" placeholder="Tapez votre question ici..." maxlength="200">
+            <button id="sendAiMessage">Envoyer</button>
         </div>
     </div>
 
@@ -1520,8 +1813,50 @@
             {
                 url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
                 title: "SOMONE  Villa de rêve à vendre"
-            }, 
+            },
         ];
+
+        // Données pour les produits
+        const products = [
+            {
+                image: "images/img16.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img17.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img18.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img19.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            },
+            {
+                image: "images/img20.jpg",
+                zone: "Nguerigne",
+                description: "Nous avons le plaisir de vous présenter notre nouveau programme immobilier Maison Merveille en cours de commercialisation sur Nguerigne. Ce complexe de prestige sera composé de sept villas haut de gamme allant de 537 à 1138 m2 sur deux niveaux. Ce projet répondant aux standards de qualité les plus élevés sera réalisé avec un très haut niveau de finition . La livraison est prévues au second semestre 2026 . Les appels de fond se feront au fur et à mesure de l'état d'avancement des travaux . Nous sommes à votre disposition pour vous procurer toutes les informations nécessaires et vous faire une présentation du projet à votre convenance."
+            }
+        ];
+
+        // Populate Products Grid
+        const productsGrid = document.getElementById('productsGrid');
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'service-card';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.zone}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.5rem;">${product.zone}</h4>
+                <p style="font-size: 0.9rem; line-height: 1.4; color: var(--dark-color);">${product.description}</p>
+            `;
+            productsGrid.appendChild(productCard);
+        });
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1839,9 +2174,194 @@ ${paymentData.nom}
             // Open WhatsApp with the message
             window.open(`https://wa.me/221772185138?text=${whatsappMessage}`, '_blank');
 
-            // Reset form
-            paymentForm.reset();
-        });
+        // Reset form
+        paymentForm.reset();
+    });
+
+    // AI Chat Modal Logic
+    const aiChatBtn = document.getElementById('aiChatBtn');
+    const aiChatModal = document.getElementById('aiChatModal');
+    const closeAiChat = document.getElementById('closeAiChat');
+    const aiChatMessages = document.getElementById('aiChatMessages');
+    const aiChatInput = document.getElementById('aiChatInput');
+    const sendAiMessage = document.getElementById('sendAiMessage');
+
+    // Open AI Chat Modal
+    aiChatBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        aiChatModal.style.display = 'flex';
+    });
+
+    // Close AI Chat Modal
+    closeAiChat.addEventListener('click', () => {
+        aiChatModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === aiChatModal) {
+            aiChatModal.style.display = 'none';
+        }
+    });
+
+    // Send message function
+    function sendMessage() {
+        const message = aiChatInput.value.trim();
+        if (message === '') return;
+
+        // Add user message
+        addMessage(message, 'user');
+
+        // Clear input
+        aiChatInput.value = '';
+
+        // Generate bot response
+        setTimeout(() => {
+            const response = generateResponse(message);
+            addMessage(response, 'bot');
+        }, 500);
+    }
+
+    // Add message to chat
+    function addMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = text;
+        aiChatMessages.appendChild(messageDiv);
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    // Generate AI response based on keywords
+    function generateResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+
+        // Services related
+        if (message.includes('service') || message.includes('services')) {
+            return "IMMOLUXE.SN offre une gamme complète de services immobiliers : vente de terrains, location d'appartements, vente de villas, négociations, conseils clients, conception architecturale, suivi des réalisations et consultation. Comment puis-je vous aider spécifiquement ?";
+        }
+
+        if (message.includes('vente') && message.includes('terrain')) {
+            return "Nous proposons des terrains bien situés pour vos projets de construction. Nos terrains sont sélectionnés dans les meilleurs quartiers de Dakar et ses environs.";
+        }
+
+        if (message.includes('location') || message.includes('appartement')) {
+            return "Pour la location d'appartements, nous proposons des biens modernes et bien équipés dans les meilleurs quartiers. Une avance de 3 mois de loyer est obligatoire, et une garantie locative est exigée.";
+        }
+
+        if (message.includes('villa') || message.includes('vente') && message.includes('villa')) {
+            return "Nos villas de prestige offrent des équipements haut de gamme. Découvrez notre sélection exclusive de villas dans notre galerie photos.";
+        }
+
+        if (message.includes('conseil') || message.includes('conseils')) {
+            return "IMMOLUXE.SN vous offre des conseils experts pour faire les bons choix immobiliers. Notre équipe vous accompagne dans toutes vos décisions.";
+        }
+
+        if (message.includes('formulaire') || message.includes('formulaires')) {
+            return "IMMOLUXE.SN met à votre disposition des formulaires vous permettant de discuter avec nous en privé. Ces formulaires sont également sur le site. Notre équipe vous accompagne dans toutes vos décisions.";
+        }
+
+        if (message.includes('conception') || message.includes('architectural')) {
+            return "Nous proposons des services de conception architecturale sur mesure pour vos projets de construction.";
+        }
+
+        if (message.includes('suivi') || message.includes('réalisation')) {
+            return "Notre équipe assure un suivi complet de vos projets immobiliers du début à la fin.";
+        }
+
+        if (message.includes('consultation')) {
+            return "Nos services de consultation incluent l'étude de marché et l'analyse de rentabilité pour vos investissements.";
+        }
+
+        // About section
+        if (message.includes('vision') || message.includes('mission') || message.includes('objectif') || message.includes('à propos') || message.includes('about')) {
+            return "IMMOLUXE.SN aspire à devenir la référence absolue dans l'immobilier de prestige à Dakar. Notre mission est d'accompagner nos clients avec professionnalisme et rigueur. Découvrez plus sur notre vision, mission et objectifs stratégiques dans la section 'À propos'.";
+        }
+
+        // Partners
+        if (message.includes('partenaire') || message.includes('partenaires')) {
+            return "IMMOLUXE.SN propose trois types de partenariats : Commercial (collaboration pour la vente), Promoteur (développement conjoint de projets), et Propriétaire (gestion professionnelle de vos biens). Contactez-nous pour en savoir plus.";
+        }
+
+        // Criteria
+        if (message.includes('critère') || message.includes('criteria') || message.includes('condition')) {
+            return "Pour les locations : avance de 3 mois obligatoire, garantie locative exigée, dossier complet requis. Nous acceptons les clients étrangers solvables. Visites sur rendez-vous uniquement.";
+        }
+
+        if (message.includes('avance') || message.includes('loyer')) {
+            return "Pour les locations de maisons et appartements, une avance de 3 mois de loyer est obligatoire.";
+        }
+
+        if (message.includes('garantie')) {
+            return "Une garantie locative est exigée pour toutes les locations chez IMMOLUXE.SN.";
+        }
+
+        if (message.includes('étranger') || message.includes('foreign')) {
+            return "IMMOLUXE.SN accepte les clients étrangers solvables selon l'avis ou la décision du bailleur.";
+        }
+
+        // Contact
+        if (message.includes('contact') || message.includes('téléphone') || message.includes('phone')) {
+            return "Contactez-nous au +221 772185138 ou par email à smoctar729@gmail.com. Notre adresse : Liberté 6 Extension, en face de cimetière St Lazar.";
+        }
+
+        if (message.includes('email')) {
+            return "Notre email : smoctar729@gmail.com";
+        }
+
+        if (message.includes('adresse') || message.includes('address')) {
+            return "Notre adresse : Liberté 6 Extension, en face de cimetière St Lazar, Dakar.";
+        }
+
+        if (message.includes('pdg') || message.includes('ceo') || message.includes('directeur')) {
+            return "Notre PDG est Moctar Sylla.";
+        }
+
+        if (message.includes('conciergerie')) {
+            return "Découvrez notre service de conciergerie SUNRISE GROUPE : https://conciergerie.sunrise-groupe.com et le site principal : https://sunrise-groupe.com";
+        }
+
+        // Properties/Gallery
+        if (message.includes('propriété') || message.includes('property') || message.includes('galerie') || message.includes('gallery')) {
+            return "Découvrez notre sélection exclusive de propriétés dans la galerie photos : villas de luxe, hôtels, résidences sécurisées. Consultez également nos vidéos immobilières.";
+        }
+
+        if (message.includes('photo') || message.includes('image')) {
+            return "Notre galerie photos présente nos propriétés exclusives : villas, hôtels, résidences. Cliquez sur les images pour les agrandir.";
+        }
+
+        if (message.includes('vidéo') || message.includes('video')) {
+            return "Consultez nos vidéos immobilières pour des visites virtuelles de nos biens exceptionnels.";
+        }
+
+        // Payment
+        if (message.includes('paiement') || message.includes('payment') || message.includes('payer')) {
+            return "Pour effectuer un paiement, rendez-vous dans la section 'Paiement en Ligne'. Nous acceptons Orange Money, Wave et Carte Bancaire.";
+        }
+
+        // Default responses
+        if (message.includes('bonjour') || message.includes('salut') || message.includes('hello')) {
+            return "Bonjour ! Comment puis-je vous aider aujourd'hui ? Je peux vous renseigner sur nos services, propriétés, critères de location ou nos coordonnées.";
+        }
+
+        if (message.includes('merci') || message.includes('thank')) {
+            return "De rien ! N'hésitez pas si vous avez d'autres questions sur IMMOLUXE.SN.";
+        }
+
+        if (message.includes('au revoir') || message.includes('bye')) {
+            return "Au revoir ! À bientôt chez IMMOLUXE.SN.";
+        }
+
+        // Generic response
+        return "Je suis l'assistant virtuel d'IMMOLUXE.SN. Je peux vous aider avec des informations sur nos services (vente, location, conseils), nos propriétés, nos critères de location, nos coordonnées ou nos partenariats. Quelle est votre question ?";
+    }
+
+    // Event listeners for sending messages
+    sendAiMessage.addEventListener('click', sendMessage);
+    aiChatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
     </script>
 </body>
 </html>
